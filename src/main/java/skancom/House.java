@@ -30,6 +30,9 @@ public class House {
 		this.monthlyRent = monthlyRent;
 	}
 	
-	
+	public void addHouse(House h)
+	{
+		
+	}
 
 }
