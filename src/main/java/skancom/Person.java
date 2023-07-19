@@ -19,7 +19,7 @@ public class Person {
 
 		this.name = name2;
 		this.password = pass;
-		
+		 
 		this.type = type2;
 	}
 

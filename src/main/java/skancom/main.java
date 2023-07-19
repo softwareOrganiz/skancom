@@ -13,7 +13,7 @@ public class main {
 	Person tenant1=new Person("muna","muna123","tenant");
 	persons.add(admin);
 	persons.add(owner1);
-	persons.add(tenant1);
+	persons.add(tenant1 );
 	}
 	
 

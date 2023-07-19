@@ -3,7 +3,7 @@ Feature:  login feature
 
   Scenario: login successfully as admin
     Given that user is not logged in
-    When username is "admin" which type is admin
+    When username is "admin" which type is admin 
     And password is correct "IamAdmin"
     Then  logged in successfully
     

@@ -31,7 +31,7 @@ public class mainFunc {
 		logger.log(Level.INFO, "\n");
 
 		while (logged == 0) {
-			logger.log(Level.INFO, "");
+			logger.log(Level.INFO, ""); 
 			logger.log(Level.INFO, "|\t\t\t\t\t\t\t\t\t\t\t\tEnter your username\t\t\t\t\t\t\t\t\t\t\t\t\t|");
 			logger.log(Level.INFO,
 					"|_______________________________________________________________________________________________________________________________|");

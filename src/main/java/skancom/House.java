@@ -32,7 +32,7 @@ public class House {
 	
 	public void addHouse(House h)
 	{
-		
+		 
 	}
 
 }
