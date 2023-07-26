@@ -23,6 +23,7 @@ public class mainFunc {
 		String stat;/*type*/
 		Logger logger = Logger.getLogger(mainFunc.class.getSimpleName());
 		main.setPersons();
+		main.setHouse();
 
 		logger.log(Level.INFO, "\n");
 
@@ -61,12 +62,20 @@ public class mainFunc {
 			if (stat.equalsIgnoreCase("owner")) {
 				while (logged == 1) {
 					logger.log(Level.INFO, "To see your housing enter 1");
-					logger.log(Level.INFO, "To add new housing 1");
+					logger.log(Level.INFO, "To add new housing enter 2");
 					
 					logger.log(Level.INFO, "Enter 0 to log out");
 					
 					x = input.nextInt();
 					if (x == 1) {
+						for(int i=0;i<main.Houses.size();i++)
+						if(main.Houses.get(i).getOwner()=="sema")
+						{
+							logger.log(Level.INFO,main.Houses.get(i).getPhoto());
+							logger.log(Level.INFO,main.Houses.get(i).getLocation());
+							logger.log(Level.INFO,main.Houses.get(i).getMonthlyRent());
+							logger.log(Level.INFO,main.Houses.get(i).getServices());
+						}
 						
 					
 					}

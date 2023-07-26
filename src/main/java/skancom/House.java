@@ -5,6 +5,17 @@ public class House {
 	private String location;
 	private String services;
 	private String monthlyRent;
+	private String owner;
+	
+	public House(String photo, String location, String services, String monthlyRent,String owner) {
+		this.photo=photo;
+		this.location=location;
+		this.services=services;
+		this.monthlyRent=monthlyRent;
+		this.setOwner(owner);
+		
+	}
+	
 	public String getPhoto() {
 		return photo;
 	}
@@ -33,6 +44,12 @@ public class House {
 	public void addHouse(House h)
 	{
 		 
+	}
+	public String getOwner() {
+		return owner;
+	}
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 
 }
