@@ -6,14 +6,27 @@ public class House {
 	private String services;
 	private String monthlyRent;
 	private String owner;
+	private String id_house;
+	private static int currentId=0;
+	private String tenant;
+	private String paidTime;
+	private String numfloors;
+	private String bedrooms;
+	private String bathrooms;
 	
-	public House(String photo, String location, String services, String monthlyRent,String owner) {
+	
+	public House()
+	{
+		
+	}
+	public House(String photo, String location, String services, String monthlyRent,String owner,String paidTime) {
 		this.photo=photo;
 		this.location=location;
 		this.services=services;
 		this.monthlyRent=monthlyRent;
 		this.setOwner(owner);
-		
+		this.id_house=String.valueOf(++currentId);
+		this.paidTime=paidTime;
 	}
 	
 	public String getPhoto() {
@@ -52,4 +65,27 @@ public class House {
 		this.owner = owner;
 	}
 
+	public String getTenant() {
+		return tenant;
+	}
+
+	public void setTenant(String tenant) {
+		this.tenant = tenant;
+	}
+
+	public String getId() {
+		return id_house;
+	}
+
+	public String getPaidTime() {
+		return paidTime;
+	}
+	public void setPaidTime(String P) {
+		this.paidTime=P;
+	}
+
+	
+
+
+	
 }

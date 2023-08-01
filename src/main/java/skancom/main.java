@@ -6,6 +6,9 @@ public class main {
 	protected static final List<Person> persons=new ArrayList<Person>(); 
 	
 	protected static final List<House> Houses=new ArrayList<House>();
+	protected static final List<tenant> tenants=new ArrayList<tenant>();
+	protected static final List<Owner>owners=new ArrayList<Owner>();
+	protected static final List<Furniture>furnit=new ArrayList<Furniture>();
 	public static void setPersons() {
 		
     Person admin=new Person("admin","Iamadmin","admin");
@@ -19,13 +22,25 @@ public class main {
 	}
 	
 public static void setHouse() {
-	 House h1=new House("photo","rafedia","services","1000$","sema");
+	 House h1=new House("photo","rafedia","services","1000$","sema","5th August");
 		
-		House h2=new House("photo2","fisal street","services2","2000$","sema");
-		House h3=new House("photo3","fisal street","services2","2000$","ahmad");
+		House h2=new House("photo2","fisal street","services2","2000$","sema","6th August");
+		House h3=new House("photo3","fisal street","services2","2000$","ahmad","10th Septemper");
 		Houses.add(h1);
 		Houses.add(h2);
 		
 	
 }
+public static void setTenant() {
+	
+	
+	tenant tenant11=new tenant("muna","20","Computer Engineering","phone: 0598184653");
+	tenants.add(tenant11);
+}
+public static void setOwner() {
+	Owner owner11=new Owner("sema","Phone: 0598213954"); 
+	owners.add(owner11);
+}
+
+
 }
