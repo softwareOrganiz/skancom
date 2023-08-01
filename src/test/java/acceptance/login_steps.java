@@ -10,9 +10,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.junit.Test;
-
-
 import skancom.Person;
 import skancom.Admin;
 public class login_steps {
