@@ -16,20 +16,16 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
-Feature:ownerHousing
+
+Feature: tenant book available housing
+
+
+
+  Scenario: booking
+    Given the uset is logged in as "tenant" with name "muna"
  
-
-  @tag1
-  Scenario: show tenant availabel housinfg
-    Given the owner is logged in as "tenant"
+    When the tenant with name "muna" enter "1"
    
-    When the owner  enter "1" to show available housing
+    Then house booked successfully
    
-    Then show the available housing
-    
-
  
-
-
-  
