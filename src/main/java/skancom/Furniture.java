@@ -21,7 +21,7 @@ public class Furniture {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(String  price) {
 		this.price = price;
 	}
 	
