@@ -41,7 +41,7 @@ public class tenant extends Person{
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(String age)  {
 		this.age = age;
 	}
 	public static int findByName(String name) {
