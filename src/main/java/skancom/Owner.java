@@ -21,10 +21,7 @@ public Owner() {
 	public House getOwnedHouse() {
 		return ownedHouse;
 	}
-	public void addHouse(House h)
-	{
-		
-	}
+	
 
 
 	public void setOwnedHouse(House owneHouse) {

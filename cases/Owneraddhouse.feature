@@ -17,7 +17,7 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: Title of your feature
+Feature: owner add house
   I want to use this template for my feature file
 
   @tag
@@ -27,13 +27,7 @@ Given The owner wants to add a new house to the waiting list.
 When The owner provides all the necessary information (ID, location, number of floors, bedrooms, bathrooms, monthly rent, etc.).
 Then The new house is successfully added to the waiting list, and the waiting list contains the new house.
 
- @tag
-Scenario: Attempt to add a house with an existing ID to the waiting list.
-
-Given The owner wants to add a new house to the waiting list.
-And There is already a house with the same ID in the waiting list.
-When The owner provides all the necessary information with the same ID as an existing house.
-Then The new house is not added to the waiting list, and the waiting list remains unchanged.
+ 
 
  @tag
 Scenario: Add multiple houses to the waiting list.

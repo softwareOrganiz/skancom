@@ -19,6 +19,9 @@ public class House {
 	private String bedrooms;
 	private String id_house;
 	private String paidTime;
+	private String tenant;
+	private String contactinfo;
+	private static int currentId=0;
 	protected static final List<House> Waitinghouses = new ArrayList<House>();
 	
 	/*public House(String photo, String location, String services, String monthlyRent,String owner,String numfloors,String bathrooms,String bedrooms) {
@@ -33,10 +36,10 @@ public class House {
 		
 	}*/
 
-	public House(String id, String owner,String numfloors,String bathrooms,String bedrooms,String location,String monthlyRent) {
+	public House( String owner,String numfloors,String bathrooms,String bedrooms,String location,String monthlyRent) {
 		this.location=location;
 		this.monthlyRent=monthlyRent;
-        this.id_house=id;	
+        this.id_house=String.valueOf(++currentId);	
 		this.numfloors= numfloors;
 		this.bathrooms=bathrooms;
 		this.bedrooms=bedrooms;
@@ -55,8 +58,8 @@ public class House {
 		return id_house;
 	}
 	
-	public void setid(String id) {
-		this.id_house=id;
+	public void setid() {
+		this.id_house=String.valueOf(++currentId);;
 	}
 	
 	public String getPhoto() {
@@ -142,6 +145,14 @@ public class House {
 	    public int hashCode() {
 	        return Objects.hash(id_house);
 	    }
+	    
+		public boolean isAvailable()
+		{
+			if(this.getTenant()==null)
+				return true;
+			else
+		return false;
+		}
 
 	public void createHouse(House ex, List<House> waiting) {
 		// TODO Auto-generated method stub
@@ -288,6 +299,53 @@ public class House {
 	            }
 	        }
 	    }
+		
+		
+			
+			
+			public static void printHousesByOwner(String ownerName, List<House> houseList) {
+		        boolean foundOwner = false;
+
+		        for (House house : houseList) {
+		            if (house != null && house.getOwner().equals(ownerName)) {
+		                foundOwner = true;
+		                Logger loger = Logger.getLogger(House.class.getSimpleName());
+		                loger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t House Attributes for Owner " + ownerName + ":");
+		                loger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t ID: " + house.getid());
+		                loger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of floors: " + house.getnumfloors());
+		                loger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of bathrooms: " + house.getnumbathrooms());
+		                loger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of bedrooms: " + house.getnumbedrooms());
+		                loger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of locations: " + house.getLocation());
+
+		            }
+		        }
+
+		        if (!foundOwner) {
+		            Logger logger = Logger.getLogger(House.class.getSimpleName());
+		            logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t No houses found for owner: " + ownerName);
+		        }
+		    }
+
+			public String getTenant() {
+				return tenant;
+			}
+
+			public void setTenant(String tenant) {
+				this.tenant = tenant;
+			}
+
+			public String getContactinfo() {
+				return contactinfo;
+			}
+
+			public void setContactinfo(String contactinfo) {
+				this.contactinfo = contactinfo;
+			}
+			
+			
+		
+			
+		
 		
 
 	

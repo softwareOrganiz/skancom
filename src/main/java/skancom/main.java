@@ -21,10 +21,10 @@ public class main {
 	}
 	
 public static void setHouse() {
-	 House h1=new House("1","sema","2","4","6","rafedia","2000");
+	 House h1=new House("sema","2","4","6","rafedia","2000");
 		
-		House h2=new House("2"," sema","3","5","7","new nablus","2500");
-		House h3=new House("78"," ahmad","2","3","8","tel street","4000");
+		House h2=new House("sema","3","5","7","new nablus","2500");
+		House h3=new House("ahmad","2","3","8","tel street","4000");
 		Houses.add(h1);
 		House.Waitinghouses.add(h2);
 		House.Waitinghouses.add(h3);

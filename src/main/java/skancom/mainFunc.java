@@ -41,7 +41,7 @@ public class mainFunc{
 			logger.log(Level.INFO, ""); 
 			logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tEnter your username\t\t\t\t\t\t\t\t\t\t\t\t\t");
 			//logger.log(Level.INFO,"|_______________________________________________________________________________________________________________________________|");
-			name = input.nextLine();
+			name = input.nextLine();	
 			logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tEnter your password\t\t\t\t\t\t\t\t\t\t\t\t\t");
 			password = input.nextLine();
 		   
@@ -74,17 +74,20 @@ public class mainFunc{
 					if (x == 1) {
 
 						House ex=new House();
-						in = input.nextLine();
-						logger.log(Level.INFO, "|\t\t\t\t\t\t\t\t\t Enter Information : ID");
-						in = input.nextLine();
-						if (House.isExistHouse(in , House.Waitinghouses )) {
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t this Id already exist");
-							logger.log(Level.INFO, "\n");
-						} else {
+					
+						ex.setid();
+						//in = input.nextLine();
+						logger.log(Level.INFO, "|\t\t\t\t\t\t\t\t\t Enter Information for house ID : "+ ex.getid());
+//						in = input.nextLine();
+//						if (House.isExistHouse(in , House.Waitinghouses )) {
+//							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t this Id already exist");
+//							logger.log(Level.INFO, "\n");
+	//				} else {
 							ex.setOwner(name);
-							ex.setid(in);
+//							ex.setid();
+							
 							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t Location");
-							in = input.nextLine();
+							in = input.nextLine();in = input.nextLine();
 							ex.setLocation(in);
 
 							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of floors");
@@ -99,14 +102,14 @@ public class mainFunc{
 							in = input.nextLine();
 							ex.setnumbathrooms(in);
 							
-							logger.log(Level.INFO, "\t\t\t\\t\t\t\t\t\t number of monthlyrent");
+							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of monthlyrent");
 							in = input.nextLine();
 							ex.setMonthlyRent(in);
 							
 							ex.createHouse(ex, House.Waitinghouses);
 							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t\t  Added successfully to the waiting list");
 
-						}
+					//	}
 
 					}
 					
@@ -211,24 +214,16 @@ public class mainFunc{
 						
 					}
 
-					else if (x == 4 || x == 5 ) { //done
-						List <House> test = new ArrayList<House>();
-						if (x == 4) {test = main.Houses;}  
-						else if (x ==5 ) {test = House.Waitinghouses;}
-						for(int i=0;i<test.size();i++)
-						if(test.get(i).getOwner()== name)
-						{
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t ID:"+test.get(i).getid());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t Location:"+test.get(i).getLocation());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of monthlyrent:"+test.get(i).getMonthlyRent());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of floors:"+test.get(i).getnumfloors());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of bedrooms:"+test.get(i).getnumbedrooms());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\t number of bathrooms:"+test.get(i).getnumbathrooms());
+					else if (x==4 || x==5) { //done
 						
+						if (x == 4) {
+
+						House.printHousesByOwner(name,main.Houses);}  
+						else if (x ==5 ) { 
+							House.printHousesByOwner(name,House.Waitinghouses);
+							}
 						}
-						
-					
-					}
+				
 					else if(x == 6){} //book accomodation for the owner 
 					else if(x==0) {
 						logged=0;
@@ -247,7 +242,18 @@ public class mainFunc{
 
 				x = input.nextInt();
 				
-				if (x == 1) {} //sema
+				if(x==1) {
+					for(int i=0;i<main.Houses.size();i++) {
+					if(main.Houses.get(i).getTenant()!=null)
+					{
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tId:"+main.Houses.get(i).getid());
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tLocation:"+main.Houses.get(i).getLocation());
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tMonthly rent:"+main.Houses.get(i).getMonthlyRent());
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tServices:"+main.Houses.get(i).getServices());
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tTenant:"+main.Houses.get(i).getTenant());
+					}}
+				}
+
 				else if (x==2) {
 					House.printallWaitingList();
 				
@@ -276,15 +282,105 @@ public class mainFunc{
 				}
 				
 					
-					}else if (x ==0) { logged =0;
+					}else if (x ==0) { logged =0; 
 					}
 					
 					
 			}}
+			String id; int y;
+			if (stat.equalsIgnoreCase("tenant")) {
+				while (logged == 1) {
+					logger.log(Level.INFO, "\t\t\\t\t\t\t\t\t\tTo see the available housing enter 1");
+					logger.log(Level.INFO, "\t\t\t\t\t\\t\t\t\tIo advertise your own used furniture for sale enter2");
+					logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tEnter 0 to log out");
+					
+					x = input.nextInt();
+					if (x == 1) {
+						for(int i=0;i<main.Houses.size();i++) {
+						if(main.Houses.get(i).getTenant()==null)
+						{
+							logger.log(Level.INFO,"House"+main.Houses.get(i).getid());
+							
+						}}
+						
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tenter the House id to show more information");
+						id=input.next();
+						for(int i=0;i<main.Houses.size();i++) {
+							if(main.Houses.get(i).getid().equals(id)) {
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Photo:"+main.Houses.get(i).getPhoto());
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Location:"+main.Houses.get(i).getLocation());
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Monthly rent:"+main.Houses.get(i).getMonthlyRent());
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Services:"+main.Houses.get(i).getServices());
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Bedrooms number:"+main.Houses.get(i).getnumbedrooms());
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Floors:"+main.Houses.get(i).getnumfloors());
+								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t bathrooms:"+main.Houses.get(i).getnumbathrooms());
+							
+							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tTo book this house enter 1");
+							logger.log(Level.INFO, "t\t\t\t\t\t\t\t\t\tTo go back inter 2");
+							y=input.nextInt();
+							if(y==1)
+							{
+							main.Houses.get(i).setTenant(name);
+							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tyou booked the house successfully");
+							for(int j=0;j<main.tenants.size();j++) {
+								if(main.tenants.get(j).getName().equals(name))	{
+								
+									logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tyour name is: "+main.tenants.get(j).getName());
+									logger.log(Level.INFO,"\t\\t\\t\\t\t\t\t\t\tyour age is: "+main.tenants.get(j).getAge());
+									logger.log(Level.INFO,"\t\\t\\t\\t\\t\\t\\t\t\tyour major is: "+main.tenants.get(j).getMajor());
+								
+								}
+							}
+							
+								
+							
+							for(int s=0;s<main.Houses.size();s++) {
+								if(main.Houses.get(s).getTenant()==name) {
+									logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tpaid time: "+main.Houses.get(s).getPaidTime());	
+								}
+							}
+							for(int t=0;t<main.Houses.size();t++) {
+								if(main.Houses.get(t).getid().equals(id)) {
+									logger.log(Level.INFO,"\t\t\t\t\t\t\t\ttthe owner name is:  "+main.Houses.get(t).getOwner());
+									int s=tenant.findByName(main.Houses.get(t).getOwner());
+									logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tthe owner Phone number is:  "+main.tenants.get(s).getContactInfo());
+								}
+									
+								}
+							}
+							
+				
+							
+							
+							}
+						}
+					
+					}
+					else if(x==2)
+					{
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\twrite a description about your furniture");
+						String desc=input.next();
+						logger.log(Level.INFO,"enter the price");
+						String price=input.next();
+						Furniture f=new Furniture(desc,price);
+						main.furnit.add(f);
+						logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t you advertise your own used furniture for sale successfully");
+					}
+					else if(x==0) {
+						logged=0;
+					}
+					else {
+							logger.log(Level.INFO,"enter valid number");
+							logger.log(Level.INFO, "\n");
+						}	
+					
+				}
+			
+			
 				
 			}
 			
 			
 
 
-}}
+}}}
