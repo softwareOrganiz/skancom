@@ -30,6 +30,7 @@ public class TenantHousing {
 		t1=new tenant();
 		t1.setName("muna");
 		House h1=new House("photo","location","services","monthly rent","owner","paid time");
+		h1.setId("1");
 		houses.add(h1);
 		
 		
@@ -64,7 +65,7 @@ public class TenantHousing {
 	public void houseBookedSuccessfully() {
 	    // Write code here that turns the phrase above into concrete actions
 	  expected=true;
-	  assertTrue(expected==true);
+	  assertTrue(actual==true);
 	
 	}
 

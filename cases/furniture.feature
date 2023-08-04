@@ -17,19 +17,16 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: tenant available housing
- 
+Feature: Title of your feature
+  I want to use this template for my feature file
 
   @tag1
-  Scenario: show tenant availabel housinfg
-    Given the user is logged in as "tenant"
+  Scenario:sale used furniture
+    Given user logged in as tenant
    
-    When the tenant  enter "1" to show available housing
+    When tenant want to sell his used furniture
    
-    Then show the available housing
-    
+    Then offer furniture  for sell
+   
 
  
-
-
-  

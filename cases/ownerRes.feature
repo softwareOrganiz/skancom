@@ -17,19 +17,19 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: tenant available housing
+Feature: owner reservation
  
 
   @tag1
-  Scenario: show tenant availabel housinfg
-    Given the user is logged in as "tenant"
+  Scenario: show owner his housing reservation  when thier is no reservation
+    Given "sema" want to see my housing reservation thier is no reservation 
    
-    When the tenant  enter "1" to show available housing
+    Then display  nothing
    
-    Then show the available housing
-    
 
+  Scenario: show owner his housing reservation  
+    Given "sema" want to see my housing reservation 
+   
+    Then display the owner housing reservation information
+   
  
-
-
-  

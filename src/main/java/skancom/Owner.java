@@ -20,18 +20,15 @@ public Owner() {
 	this.setType("owner");
 }
 
-	public House getOwnedHouse() {
-		return ownedHouse;
-	}
-	public void addHouse(House h)
-	{
-		
-	}
-
-
-	public void setOwnedHouse(House owneHouse) {
-		this.ownedHouse = owneHouse;
-	}
+//	public House getOwnedHouse() {
+//		return ownedHouse;
+//	}
+//	
+//
+//
+//	public void setOwnedHouse(House owneHouse) {
+//		this.ownedHouse = owneHouse;
+//	}
 
 
 	

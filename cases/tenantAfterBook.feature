@@ -17,19 +17,15 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: tenant available housing
+Feature: tenant info after booking
  
-
   @tag1
-  Scenario: show tenant availabel housinfg
-    Given the user is logged in as "tenant"
+  Scenario: 
+    Given user logged in as a tenant
    
-    When the tenant  enter "1" to show available housing
+    When tenant booked a house
    
-    Then show the available housing
-    
-
- 
-
+    Then display house info and owner contact info
+   
 
   

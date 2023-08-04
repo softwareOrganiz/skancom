@@ -42,16 +42,17 @@ public class TestHouse {
 	}
 	
 	
-	@Given("the owner is logged in as {string}")
-	public void theOwnerIsLoggedInAs(String string) {
+	@Given("the user is logged in as {string}")
+	public void theUserIsLoggedInAs(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	   user.setLogged(1);
 	   user.getLogged();
 	   status=string;
+	   t.setType(status);
 	   type=t.getType();
 	}
-	@When("the owner  enter {string} to show available housing")
-	public void theOwnerEnterToShowAvailableHousing(String string) {
+	@When("the tenant  enter {string} to show available housing")
+	public void theTenantEnterToShowAvailableHousing(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	 for(int i=0;i<Houses.size();i++)
 	 {
@@ -75,6 +76,7 @@ public class TestHouse {
       assertTrue( obj.getMonthlyRent().equals(obj.getMonthlyRent()));
       assertTrue( obj.getOwner().equals(obj.getOwner()));
       assertTrue( obj.getPaidTime().equals(obj.getPaidTime()));
+      assertTrue(type.equals("tenant"));
 	}
 
 
