@@ -25,6 +25,12 @@ public static void setHouse() {
 	 House h1=new House("photo","rafedia","services","1000$","sema","5th August");
 		
 		House h2=new House("photo2","fisal street","services2","2000$","sema","6th August");
+		h1.setnumbathrooms("2");
+		h1.setnumbedrooms("3");
+		h1.setnumfloors("1");
+		h2.setnumbathrooms("1");
+		h2.setnumbedrooms("2");
+		h2.setnumfloors("3");
 		House h3=new House("photo3","fisal street","services2","2000$","ahmad","10th Septemper");
 		Houses.add(h1);
 		Houses.add(h2);

@@ -29,7 +29,7 @@ public Owner() {
 	}
 
 
-	public void setOwnedHouse(House owneHouse) {
+	public void setOwneHouse(House owneHouse) {
 		this.ownedHouse = owneHouse;
 	}
 
